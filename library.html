@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Guitar Companion</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+  <!--The head of the page which contains the name of the website and the burger menu on the left and the favourites bar on the right-->
+    <div class="header">
+      <nav id="menu">
+        <button id="burgerMenu" onclick="openMenu()">
+          <div class="line line-1"></div>
+          <div class="line line-2"></div>
+          <div class="line line-3"></div>
+        </button>
+        <div class="cover"></div>
+        <div class="navLinks">
+          <ul class="linkList">
+            <li class="menuLink"><a href="index.html" class="menuItems">Home Page</a></li>
+            <li class="menuLink"><a href="quiz.html" class="menuItems">Quiz</a></li>
+            <li class="menuLink"><a href="library.html" class="menuItems">Library</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="title">
+        <header>
+          <h1>My Guitar Companion</h1>
+        </header>
+      </div>
+      <div class="favs">
+        <img src="img/favourite-icon.png" alt="Favourite Menu" class="fav-menu-icon">
+      </div>
+    </div>
+    <div class="welcomePara">
+      <h2>Welcome</h2>
+      <p>This is guitar companion, a place dedicated to healping you learn guitar in a fun and engaging way. Explore the page and find out for yourself what my guitar companion has to offer </p>
+    </div>
+    <script>
+
+      function openMenu(){
+        document.getElementById("menu").classList.toggle("change")
+    };
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Guitar Companion</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+  <!--The head of the page which contains the name of the website and the burger menu on the left and the favourites bar on the right
+
+      The menu portion of this code uses a variety of different ids and classes which work in unison to create a working hanmburger pop up menu that expands
+        over the entire screen to reveal the links to other pages, giving it a more polished look-->
+
+    <div class="header">
+      <nav id="menu">
+        <button id="burgerMenu" onclick="openMenu()">
+          <div class="line line-1"></div>
+          <div class="line line-2"></div>
+          <div class="line line-3"></div>
+        </button>
+        <div class="cover"></div>
+        <div class="navLinks">
+          <ul class="linkList">
+            <li class="menuLink"><a href="index.html" class="menuItems">Home Page</a></li>
+            <li class="menuLink"><a href="quiz.html" class="menuItems">Quiz</a></li>
+            <li class="menuLink"><a href="library.html" class="menuItems">Library</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="title">
+        <header>
+          <h1>My Guitar Companion</h1>
+        </header>
+      </div>
+      <div class="favs">
+        <img src="img/favourite-icon.png" alt="Favourite Menu" class="fav-menu-icon">
+      </div>
+    </div>
+    <div class="welcomePara">
+      <h2>Welcome</h2>
+      <p>This is My Guitar Companion, a place dedicated to helping you learn guitar in a fun and engaging way. Explore the page and find out for yourself what my guitar companion has to offer. </p>
+    </div>
+    <div class="quickRiffAndCover">
+      <div id="quickRiff">
+        <div id="showSweetChild0Mine">
+          <img class="riffTab riff-1" src="img/sweetChildOMine.jpg" alt="Sweet Child O Mine">
+        </div>
+        <div id="showSatisfaction">
+          <img class="riffTab riff-2" src="img/satisfaction.jpg" alt="Satisfaction">
+        </div>
+        <div id="showSunshineOfYourLove">
+          <img class="riffTab riff-3" src="img/sunshineOfYourLove.jpg" alt="Sunshine of Your Love">
+        </div>
+      </div>
+      <div id="cotd">
+        <video class = "cover-1 coverTab" controls>
+          <source src="vid\beat it.mp4" type="video/mp4">
+        </video>
+        <video class = "cover-2 coverTab" controls>
+          <source src="vid\lucid dreams.mp4" type="video/mp4">
+        </video>
+        <video class="cover-3 coverTab" controls>
+          <source src="vid\thunderstruck.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+    <div class="welcomePara">
+      <h2>Community</h2>
+      <p>As a part of the My Guitar Companion community you can submit videos of your own cover of a song of your choice and be in for a chance to get featured as a COVER OF THE DAY and be featured on the website.</p>
+      <a href="https://www.instagram.com/explore/tags/guitarcover/"><img id="instagram" src="img/instagram logo.png"/></a>
+      <a href="https://www.facebook.com/groups/fenderplaycommunity/"><img id="facebook" src="img/facebook-logo.jpg"/></a>
+    </div>
+    <div id="interactiveDiagram">
+      <img id="guitarImg" src="img/guitar-diagram.jpg" alt="Guitar Diagram">
+      <div class="infoButton">
+        <button type="button" name="info-head" onmousedown="openInfo1()" onmouseup="closeInfo1()"><p>Head</p></button>
+        <div class="spacer"></div>
+        <button type="button" name="info-neck" onmousedown="openInfo2()"onmouseup="closeInfo2()"><p>Neck</p></button>
+        <div class="spacer"></div>
+        <button type="button" name="info-neck" onmousedown="openInfo3()"onmouseup="closeInfo3()"><p>Body</p></button>
+      </div>
+      <div id="infoBox">
+        <div class="infoBox-1"><p>The head of the guitar</p></div>
+        <div class="infoBox-2"><p>The neck of the guitar</p></div>
+        <div class="infoBox-3"><p>The body of the guitar</p></div>
+      </div>
+    </div>
+
+
+    <script>
+      /*the following function is used to toggle the class "change" on and off when the menu button is pressed, making the menu open up and activate*/
+      function openMenu(){
+        document.getElementById("menu").classList.toggle("change")
+      };
+
+      /**/
+      let riffImage = Math.round(Math.random() * 2) + 1
+
+      if (riffImage == 1){
+        document.getElementById("quickRiff").classList.toggle("riffOne")
+      }
+
+      if (riffImage == 2){
+        document.getElementById("quickRiff").classList.toggle("riffTwo")
+      }
+
+      if (riffImage == 3){
+        document.getElementById("quickRiff").classList.toggle("riffThree")
+      }
+      console.log(riffImage)
+
+      /**/
+      let coverOfday = Math.round(Math.random() * 2) + 1
+
+      if (coverOfday == 1){
+        document.getElementById("cotd").classList.toggle("coverOne")
+      }
+
+      if (coverOfday == 2){
+        document.getElementById("cotd").classList.toggle("coverTwo")
+      }
+
+      if (coverOfday == 3){
+        document.getElementById("cotd").classList.toggle("coverThree")
+      }
+
+      console.log(coverOfday)
+
+      function openInfo1(){
+        document.getElementById("infoBox").classList.add("changeInfo-1")
+      };
+
+      function closeInfo1(){
+        document.getElementById("infoBox").classList.remove("changeInfo-1")
+      };
+
+      function openInfo2(){
+        document.getElementById("infoBox").classList.add("changeInfo-2")
+      };
+
+      function closeInfo2(){
+        document.getElementById("infoBox").classList.remove("changeInfo-2")
+      };
+
+      function openInfo3(){
+        document.getElementById("infoBox").classList.add("changeInfo-3")
+      };
+
+      function closeInfo3(){
+        document.getElementById("infoBox").classList.remove("changeInfo-3")
+      };
+
+    </script>
+  </body>
+</html>

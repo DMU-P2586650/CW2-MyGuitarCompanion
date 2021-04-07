@@ -1,20 +1,22 @@
-
-/*This css related to the position of elements in the header of the page. It uses flexbox to space out the menu, the page title and the favourites menu*/
-.header{
-	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: space-between;
-	align-items: flex-start;
-	align-content: stretch;
-
+body{
+	width:100%;
+	margin: 0px 0px;
 }
 
 
-header{
+/*This css related to the position of elements in the header of the page. It uses flexbox to space out the menu, the page title and the favourites menu*/
+.header{
+	display: block;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+
+.title{
   text-align: center;
   background-color: grey;
   font-size: 20pt;
+	align-items: center;
 }
 /*This css is for hamburger menu which opens up and closes with smooth transitions. It uses postioning to make it fix it in a certain place on the screen
 which makes it easier to animate an expanding background. The postioning of the various elements are controlled using the z-index which determines where
@@ -89,7 +91,7 @@ adding a background which expands to block out the entire page besides the links
 .cover{
 	width: 50px;
 	height: 50px;
-	background-color: rgba(190, 23, 23, 0.99);
+	background-color: rgba(144, 144, 144, 0.99);
 	position: fixed;
 	top: 5px;
 	left: 5px;
@@ -119,6 +121,8 @@ li{
 
 .welcomePara{
 	font-size: 18pt;
+	text-align: center;
+
 }
 
 .quickRiffAndCover{
@@ -260,7 +264,7 @@ li{
 
 .spacer{
 	width: 20px;
-	height:20px;
+	height:5vh;
 }
 
 .infoBox{
@@ -269,34 +273,43 @@ li{
 .infoBox-1{
 	width: 60vw;
 	height: 40vh;
-	background-color: red;
 	float: left;
 	margin: 0px 0px 0px 30vw;
 	position: absolute;
 	opacity: 0;
+	border: 1px black solid;
+	border-radius: 10px;
 }
 
 .infoBox-2{
 	width: 60vw;
 	height: 40vh;
-	background-color: blue;
 	float: left;
 	margin: 0px 0px 0px 30vw;
 	position: absolute;
 	opacity: 0;
+	border: 1px black solid;
+	border-radius: 10px;
 }
 
 .infoBox-3{
 	width: 60vw;
 	height: 40vh;
-	background-color: green;
 	float: left;
 	margin: 0px 0px 0px 30vw;
 	position: absolute;
 	opacity: 0;
+	border: 1px black solid;
+	border-radius: 10px;
 }
 
+.infoHeader{
+	text-align: center;
+}
 
+.infoText{
+	margin:10px;
+}
 
 .changeInfo-1 .infoBox-1{
 	opacity:1;
@@ -308,4 +321,135 @@ li{
 
 .changeInfo-3 .infoBox-3{
 	opacity:1;
+}
+
+button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+button span:after {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+button:hover {
+  background-color:rgb(209, 209, 209);
+}
+button:hover span {
+  padding-right: 25px;
+}
+button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.ansOne #correctQOne{
+	background-color: green;
+
+}
+.ansOne .wrongQ{
+	background-color: red;
+}
+
+.ansTwo #correctQTwo{
+	background-color: green;
+
+}
+.ansTwo .wrongQ{
+	background-color: red;
+}
+.ansThree #correctQThree{
+	background-color: green;
+
+}
+.ansThree .wrongQ{
+	background-color: red;
+}
+.ansFour #correctQFour{
+	background-color: green;
+
+}
+.ansFour .wrongQ{
+	background-color: red;
+}
+.ansFive #correctQFive{
+	background-color: green;
+
+}
+.ansFive .wrongQ{
+	background-color: red;
+}
+.ansSix #correctQSix{
+	background-color: green;
+
+}
+.ansSix .wrongQ{
+	background-color: red;
+}
+.ansSeven #correctQSeven{
+	background-color: green;
+
+}
+.ansSeven .wrongQ{
+	background-color: red;
+}
+.ansEight #correctQEight{
+	background-color: green;
+
+}
+.ansEight .wrongQ{
+	background-color: red;
+}
+.ansNine #correctQNine{
+	background-color: green;
+
+}
+.ansNine .wrongQ{
+	background-color: red;
+}
+.ansTen #correctQTen{
+	background-color: green;
+
+}
+.ansTen .wrongQ{
+	background-color: red;
+}
+
+#results{
+	display: inline;
+	font-size: 20pt;
+}
+
+#resultContainer{
+	text-align: center;
+	font-size: 20pt;
+	padding:10px;
+	border: 5px black solid;
+	margin: 20px 20px;
+	display: block;
+}
+
+.question{
+	text-align: center;
+	border: 5px solid black;
+	border-radius: 5px;
+	margin: 5px 3px;
+}
+
+#submit{
+	width: 30vw;
+	height: 30vh;
+	text-align: center;
+	font-size: 20pt;
+}
+
+.endContainer{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+
 }

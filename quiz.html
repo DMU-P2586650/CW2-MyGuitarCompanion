@@ -29,19 +29,236 @@
           <h1>My Guitar Companion</h1>
         </header>
       </div>
-      <div class="favs">
-        <img src="img/favourite-icon.png" alt="Favourite Menu" class="fav-menu-icon">
-      </div>
     </div>
     <div class="welcomePara">
-      <h2>Welcome</h2>
-      <p>This is guitar companion, a place dedicated to healping you learn guitar in a fun and engaging way. Explore the page and find out for yourself what my guitar companion has to offer </p>
+      <h2>The Quiz</h2>
+      <p>Are you feeling exeptionally smart today? Do you think you can take on the quiz? Well step up and show your worth and brag about how much, or how little, you know about the guitar! </p>
+    </div>
+    <div id="quiz">
+      <div class="question" id="questionOne">
+        <h2>Question 1</h2>
+        <p>Where are the tuning pegs found?</p>
+        <p>1:<button id="correctQOne" onclick="addScoreOne();showAnsOne()" >Head</button></p>
+        <p>2:<button class="wrongQ" onclick="showAnsOne()">Neck</button></p>
+        <p>3:<button class="wrongQ" onclick="showAnsOne()">Body</button></p>
+      </div>
+      <div class="question" id="questionTwo">
+        <h2>Question 2</h2>
+        <p>How many strings are there on a Guitar?</p>
+        <p>1:<button class="wrongQ" onclick="showAnsTwo()">5</button></p>
+        <p>2:<button id="correctQTwo" onclick="addScoreTwo();showAnsTwo()">6</button></p>
+        <p>3:<button class="wrongQ" onclick="showAnsTwo()">7</button></p>
+      </div>
+      <div class="question" id="questionThree">
+        <h2>Question 3</h2>
+        <p>What tool is used to help strum the strings?</p>
+        <p>1:<button id="correctQThree" onclick="addScoreThree();showAnsThree()" >Pick</button></p>
+        <p>2:<button class="wrongQ" onclick="showAnsThree()">Capo</button></p>
+        <p>3:<button class="wrongQ" onclick="showAnsThree()">Bow</button></p>
+      </div>
+      <div class="question" id="questionFour">
+        <h2>Question 4</h2>
+        <p>What part holds the strings?</p>
+        <p>1:<button class="wrongQ" onclick="showAnsFour()">Neck</button></p>
+        <p>2:<button class="wrongQ" onclick="showAnsFour()">Sound Hole</button></p>
+        <p>3:<button id="correctQFour" onclick="addScoreFour();showAnsFour()" >Bridge</button></p>
+      </div>
+      <div class="question" id="questionFive">
+        <h2>Question 5</h2>
+        <p>What do you call the lines on the neck of the guitar?</p>
+        <p>1:<button id="correctQFive" onclick="addScoreFive();showAnsFive()" >Frets</button></p>
+        <p>2:<button class="wrongQ" onclick="showAnsFive()">Strings</button></p>
+        <p>3:<button class="wrongQ" onclick="showAnsFive()">Nuts</button></p>
+      </div>
+      <div class="question" id="questionSix">
+        <h2>Question 6</h2>
+        <p>On a Chord Chart, what do the 'X's mean?</p>
+        <p>1:<button class="wrongQ" onclick="showAnsSix()">Play string</button></p>
+        <p>2:<button id="correctQSix" onclick="addScoreSix();showAnsSix()" >Mute String</button></p>
+        <p>3:<button class="wrongQ" onclick="showAnsSix()">Bend String</button></p>
+      </div>
+      <div class="question" id="questionSeven">
+        <h2>Question 7</h2>
+        <p>On a Chord Chart, what do the dots mean?</p>
+        <p>1:<button class="wrongQ" onclick="showAnsSeven()">Dead Note</button></p>
+        <p>2:<button class="wrongQ" onclick="showAnsSeven()">Mute</button></p>
+        <p>3:<button id="correctQSeven" onclick="addScoreSeven();showAnsSeven()" >Place Fingers</button></p>
+      </div>
+      <div class="question" id="questionEight">
+        <h2>Question 8</h2>
+        <p>Where is the Sound Hole found</p>
+        <p>1:<button class="wrongQ" onclick="showAnsEight()">Neck</button></p>
+        <p>2:<button id="correctQEight" onclick="addScoreEight();showAnsEight()" >Body</button></p>
+        <p>3:<button class="wrongQ" onclick="showAnsEight()">Head</button></p>
+      </div>
+      <div class="question" id="questionNine">
+        <h2>Question 9</h2>
+        <p>What is the normal guitar tuning pattern?</p>
+        <p>1:<button class="wrongQ" onclick="showAnsNine()">DADGBe</button></p>
+        <p>2:<button id="correctQNine" onclick="addScoreNine();showAnsNine()" >EADGBe</button></p>
+        <p>3:<button class="wrongQ" onclick="showAnsNine()">E#A#D#G#B#e#</button></p>
+      </div>
+      <div class="question" id="questionTen">
+        <h2>Question 10</h2>
+        <p>Where is string number 6 found?</p>
+        <p>1:<button id="correctQTen" onclick="addScoreTen();showAnsTen()" >Top</button></p>
+        <p>2:<button class="wrongQ" onclick="showAnsTen()">Middle</button></p>
+        <p>3:<button class="wrongQ" onclick="showAneTen()">Bottom</button></p>
+      </div>
+    </div>
+    <div class="endContainer">
+      <button id="submit" onclick="showScore();pressCounter()">Submit Results</button>
+      <div id = "resultContainer">
+        <p><p id="results"></p>/10</p>
+      </div>
     </div>
     <script>
 
       function openMenu(){
         document.getElementById("menu").classList.toggle("change")
-    };
+      };
+
+      let score = 0;
+      let questionOne = 0;
+      let questionTwo = 0;
+      let questionThree = 0;
+      let questionFour = 0;
+      let questionFive = 0;
+      let questionSix = 0;
+      let questionSeven = 0;
+      let questionEight = 0;
+      let questionNine = 0;
+      let questionTen = 0;
+      let timesPressed = 0;
+
+
+      function showAnsOne(){
+        document.getElementById("questionOne").classList.add("ansOne")
+      };
+      function showAnsTwo(){
+        document.getElementById("questionTwo").classList.add("ansTwo")
+      };
+      function showAnsThree(){
+        document.getElementById("questionThree").classList.add("ansThree")
+      };
+      function showAnsFour(){
+        document.getElementById("questionFour").classList.add("ansFour")
+      };
+      function showAnsFive(){
+        document.getElementById("questionFive").classList.add("ansFive")
+      };
+      function showAnsSix(){
+        document.getElementById("questionSix").classList.add("ansSix")
+      };
+      function showAnsSeven(){
+        document.getElementById("questionSeven").classList.add("ansSeven")
+      };
+      function showAnsEight(){
+        document.getElementById("questionEight").classList.add("ansEight")
+      };
+      function showAnsNine(){
+        document.getElementById("questionNine").classList.add("ansNine")
+      };
+      function showAnsTen(){
+        document.getElementById("questionTen").classList.add("ansTen")
+      };
+
+
+      function addScoreOne(){
+        questionOne++;
+        console.log(questionOne);
+      };
+      function addScoreTwo(){
+        questionTwo++;
+        console.log(questionTwo);
+      };
+      function addScoreThree(){
+        questionThree++;
+        console.log(questionThree);
+      };
+      function addScoreFour(){
+        questionFour++;
+        console.log(questionFour);
+      };
+      function addScoreFive(){
+        questionFive++;
+        console.log(questionFive);
+      };
+      function addScoreSix(){
+        questionSix++;
+        console.log(questionSix);
+      };
+      function addScoreSeven(){
+        questionSeven++;
+        console.log(questionSeven);
+      };
+      function addScoreEight(){
+        questionEight++;
+        console.log(questionEight);
+      };
+      function addScoreNine(){
+        questionNine++;
+        console.log(questionNine);
+      };
+      function addScoreTen(){
+        questionTen++;
+        console.log(questionTen);
+      };
+
+      function pressCounter(){
+        timesPressed++;
+      }
+
+
+      function showScore(){
+        if (questionOne >= 1){
+          score++;
+          console.log(score);
+        }
+        if (questionTwo >= 1){
+          score++;
+          console.log(score);
+        }
+        if (questionThree >= 1){
+          score++;
+          console.log(score);
+        }
+        if (questionFour >= 1){
+          score++;
+          console.log(score);
+        }
+        if (questionFive >= 1){
+          score++;
+          console.log(score);
+        }
+        if (questionSix >= 1){
+          score++;
+          console.log(score);
+        }
+        if (questionSeven >= 1){
+          score++;
+          console.log(score);
+        }
+        if (questionEight >= 1){
+          score++;
+          console.log(score);
+        }
+        if (questionNine >= 1){
+          score++;
+          console.log(score);
+        }
+        if (questionTen >= 1){
+          score++;
+          console.log(score);
+        }
+        if (timesPressed >= 1) {
+          let score = score / 2
+        }
+        document.getElementById("results").innerHTML = score;
+      }
+
+
+
 
     </script>
   </body>

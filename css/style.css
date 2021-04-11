@@ -104,7 +104,7 @@ adding a background which expands to block out the entire page besides the links
 	transition: transform 0.5s;
 }
 
-li{
+.linkList li{
     margin-bottom: 10vh;
 		font-size: 18pt;
 }
@@ -279,6 +279,7 @@ li{
 	opacity: 0;
 	border: 1px black solid;
 	border-radius: 10px;
+	transition: 0.5s;
 }
 
 .infoBox-2{
@@ -290,6 +291,7 @@ li{
 	opacity: 0;
 	border: 1px black solid;
 	border-radius: 10px;
+	transition: 0.5s;
 }
 
 .infoBox-3{
@@ -301,6 +303,7 @@ li{
 	opacity: 0;
 	border: 1px black solid;
 	border-radius: 10px;
+	transition: 0.5s;
 }
 
 .infoHeader{
@@ -440,6 +443,7 @@ button:hover span:after {
 	margin: 5px 3px;
 }
 
+
 #submit{
 	width: 30vw;
 	height: 30vh;
@@ -452,4 +456,47 @@ button:hover span:after {
 	flex-direction: row;
 	justify-content: space-around;
 
+}
+
+#input {
+  background-repeat: no-repeat;
+  width: 50%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+	margin: 10px 10px 12px 10px;
+	align-items: center;
+	display: block;
+	margin: auto;
+}
+
+#songLibrary {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#songLibrary li{
+	list-style: none;
+}
+
+#songLibrary li a {
+  border: 1px solid black;
+  margin: 0px 0px;
+  background-color:;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: flex;
+	justify-content: space-around;
+	list-style: none;
+}
+
+#songLibrary li a:hover:not(.header) {
+  background-color: #eee;
+}
+#libraryheadings{
+	display: flex;
+	justify-content: space-around;
 }

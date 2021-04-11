@@ -74,11 +74,11 @@
     <div id="interactiveDiagram">
       <img id="guitarImg" src="img/guitar-diagram.jpg" alt="Guitar Diagram">
       <div class="infoButton">
-        <button type="button" name="info-head" onmousedown="openInfo1()" onmouseup="closeInfo1()"><p>Head</p></button>
+        <button type="button" name="info-head" onmousedown="openInfo1()" ><p>Head</p></button>
         <div class="spacer"></div>
-        <button type="button" name="info-neck" onmousedown="openInfo2()"onmouseup="closeInfo2()"><p>Neck</p></button>
+        <button type="button" name="info-neck" onmousedown="openInfo2()"><p>Neck</p></button>
         <div class="spacer"></div>
-        <button type="button" name="info-neck" onmousedown="openInfo3()"onmouseup="closeInfo3()"><p>Body</p></button>
+        <button type="button" name="info-neck" onmousedown="openInfo3()"><p>Body</p></button>
       </div>
       <div id="infoBox">
         <div class="infoBox-1"><h3 class="infoHeader">The Head</h3><p class="infoText">The head of the guitar is where the tuning pegs and the nut is found. It is used to adjust the tune of the guitar and how far apart the strings are. This affects the tune and ring of the guitar. </p></div>
@@ -128,9 +128,18 @@
       console.log(coverOfday)
 
       function openInfo1(){
-        document.getElementById("infoBox").classList.add("changeInfo-1")
+        document.getElementById("infoBox").classList.add("changeInfo-1");
+        document.getElementById("infoBox").classList.remove("changeInfo-2","changeInfo-3")
       };
-
+      function openInfo2(){
+        document.getElementById("infoBox").classList.add("changeInfo-2");
+        document.getElementById("infoBox").classList.remove("changeInfo-1","changeInfo-3")
+      };
+      function openInfo3(){
+        document.getElementById("infoBox").classList.add("changeInfo-3");
+        document.getElementById("infoBox").classList.remove("changeInfo-2","changeInfo-1")
+      };
+  /*
       function closeInfo1(){
         document.getElementById("infoBox").classList.remove("changeInfo-1")
       };
@@ -150,7 +159,7 @@
       function closeInfo3(){
         document.getElementById("infoBox").classList.remove("changeInfo-3")
       };
-
+*/
     </script>
   </body>
 </html>

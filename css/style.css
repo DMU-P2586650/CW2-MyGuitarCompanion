@@ -109,22 +109,13 @@ adding a background which expands to block out the entire page besides the links
 		font-size: 18pt;
 }
 
-/**/
-.fav{
-  background-color: black;
-}
-
-.fav-menu-icon{
-  width:75px;
-  height:75px;
-}
-
+/*This is the general style used for all paragraphs*/
 .welcomePara{
 	font-size: 18pt;
 	text-align: center;
 
 }
-
+ /*The quick riff and cover is set out so theyre spaced out. It uses visibility to change which one is visable to the user*/
 .quickRiffAndCover{
 	display: flex;
 	flex-direction: row;
@@ -190,7 +181,6 @@ adding a background which expands to block out the entire page besides the links
 }
 
 
-/**/
 .coverTab{
 	width: 100%;
 	height: 100%;
@@ -233,7 +223,7 @@ adding a background which expands to block out the entire page besides the links
 	visibility: visible;
 }
 
-/**/
+/*The social media logo links*/
 
 #instagram{
 	width:5%;
@@ -245,8 +235,7 @@ adding a background which expands to block out the entire page besides the links
 	height:5%;
 }
 
-/**/
-
+/*The image of the guitar is shifted bases on the viewing port / screen size. Again the info boxes use opacity to control how visable they are to the user*/
 #guitarImg{
 	width: 20%;
 	height:20%;
@@ -349,7 +338,7 @@ button:hover span:after {
   opacity: 1;
   right: 0;
 }
-
+/*Answers to the quiz*/
 .ansOne #correctQOne{
 	background-color: green;
 
@@ -422,6 +411,7 @@ button:hover span:after {
 	background-color: red;
 }
 
+/*The results section of the quiz*/
 #results{
 	display: inline;
 	font-size: 20pt;
@@ -493,9 +483,6 @@ button:hover span:after {
 	list-style: none;
 }
 
-#songLibrary li a:hover:not(.header) {
-  background-color: #eee;
-}
 #libraryheadings{
 	display: flex;
 	justify-content: space-around;

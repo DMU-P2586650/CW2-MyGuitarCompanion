@@ -10,7 +10,9 @@
   <!--The head of the page which contains the name of the website and the burger menu on the left and the favourites bar on the right
 
       The menu portion of this code uses a variety of different ids and classes which work in unison to create a working hanmburger pop up menu that expands
-        over the entire screen to reveal the links to other pages, giving it a more polished look-->
+        over the entire screen to reveal the links to other pages, giving it a more polished look
+
+      The lines have been set up individually so they can animate individually to create an X shape when pressed-->
 
     <div class="header">
       <nav id="menu">
@@ -38,6 +40,8 @@
       <h2>Welcome</h2>
       <p>This is My Guitar Companion, a place dedicated to helping you learn guitar in a fun and engaging way. Explore the page and find out for yourself what my guitar companion has to offer. </p>
     </div>
+    <!--The Quick riff and Cover of the Day section is where a random riff or cover is shown, It uses a randomly generated number from 1 to 3
+  on each section and shows the alicated riff/cover. This means that everytime the page is refreshed it should show a random cover and riff-->
     <div class="quickRiffAndCover">
       <div id="quickRiff">
         <div id="showSweetChild0Mine">
@@ -62,12 +66,16 @@
         </video>
       </div>
     </div>
+    <!--The community part of the page is just two links to social media windows. The links are embedded in the images of platform it sends you to-->
     <div class="welcomePara">
       <h2>Community</h2>
       <p>As a part of the My Guitar Companion community you can submit videos of your own cover of a song of your choice and be in for a chance to get featured as a COVER OF THE DAY and be featured on the website.</p>
       <a href="https://www.instagram.com/explore/tags/guitarcover/"><img id="instagram" src="img/instagram logo.png"/></a>
       <a href="https://www.facebook.com/groups/fenderplaycommunity/"><img id="facebook" src="img/facebook-logo.jpg"/></a>
     </div>
+    <!--The interactive diagram is three buttons that represent the three main parts of teh guitar, the head, neck and body. When on is clicked it adds
+  a class which shows the information about that specific part and removes the two classes relates to the other parts. This in turn allows the user
+to switch between each info box-->
     <div class="welcomePara">
       <h2>Interactive Diagram</h2>
     </div>
@@ -89,12 +97,13 @@
 
 
     <script>
-      /*the following function is used to toggle the class "change" on and off when the menu button is pressed, making the menu open up and activate*/
+      /*the following function is used to toggle the class "change" on and off when the menu button is pressed, making the menu open up and activate.
+      The class is linked to each componant of the menu, including the lines, the grey cover which expands from the button and links to each page */
       function openMenu(){
         document.getElementById("menu").classList.toggle("change")
       };
 
-      /**/
+      /*The random number generator for the riffs*/
       let riffImage = Math.round(Math.random() * 2) + 1
 
       if (riffImage == 1){
@@ -110,7 +119,7 @@
       }
       console.log(riffImage)
 
-      /**/
+      /*The random number generator for the Covers*/
       let coverOfday = Math.round(Math.random() * 2) + 1
 
       if (coverOfday == 1){
@@ -127,6 +136,8 @@
 
       console.log(coverOfday)
 
+      /*The Functions for swapping between each info box*/
+
       function openInfo1(){
         document.getElementById("infoBox").classList.add("changeInfo-1");
         document.getElementById("infoBox").classList.remove("changeInfo-2","changeInfo-3")
@@ -139,27 +150,7 @@
         document.getElementById("infoBox").classList.add("changeInfo-3");
         document.getElementById("infoBox").classList.remove("changeInfo-2","changeInfo-1")
       };
-  /*
-      function closeInfo1(){
-        document.getElementById("infoBox").classList.remove("changeInfo-1")
-      };
 
-      function openInfo2(){
-        document.getElementById("infoBox").classList.add("changeInfo-2")
-      };
-
-      function closeInfo2(){
-        document.getElementById("infoBox").classList.remove("changeInfo-2")
-      };
-
-      function openInfo3(){
-        document.getElementById("infoBox").classList.add("changeInfo-3")
-      };
-
-      function closeInfo3(){
-        document.getElementById("infoBox").classList.remove("changeInfo-3")
-      };
-*/
     </script>
   </body>
 </html>

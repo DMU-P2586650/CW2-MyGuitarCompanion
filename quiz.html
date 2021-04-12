@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-  <!--The head of the page which contains the name of the website and the burger menu on the left and the favourites bar on the right-->
+  <!--The head of the page which contains the name of the website and the burger menu on the left-->
     <div class="header">
       <nav id="menu">
         <button id="burgerMenu" onclick="openMenu()">
@@ -34,6 +34,12 @@
       <h2>The Quiz</h2>
       <p>Are you feeling exeptionally smart today? Do you think you can take on the quiz? Well step up and show your worth and brag about how much, or how little, you know about the guitar! </p>
     </div>
+
+    <!--The quiz uses the same layout for each question. Each question has a right answer which has its own id with two wrong answers which are part of teh same class.
+  If you press any button on a single question it will add a class called "ans" and whatever number question the users on ("ansOne" for example). This will trigger
+  the buttons to chagnge to either green for correct or red for wrong. This is repeated each quetion so they dont all activate at onces. If the correct answer is chosen
+  then the score of the single question is added. IF statements are then used to add to an overall score. This means the user can press a correct answer as many times
+  as they like and it will only add one onto the over all score-->
     <div id="quiz">
       <div class="question" id="questionOne">
         <h2>Question 1</h2>
@@ -106,6 +112,8 @@
         <p>3:<button class="wrongQ" onclick="showAneTen()">Bottom</button></p>
       </div>
     </div>
+    <!--The submit button shows the user how many question they got correct out of 10. It uses the innerHTML element to print the variable "score"
+    into the results div-->
     <div class="endContainer">
       <button id="submit" onclick="showScore();pressCounter()">Submit Results</button>
       <div id = "resultContainer">

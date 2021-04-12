@@ -41,6 +41,7 @@
           <h2>Songs</h2>
           <h2>Artists</h2>
         </div>
+        <!--The list of links for the song library-->
         <ul id="songList">
           <li><a href="img/EnterSandman.png" class="metal"><h3>Enter Sandman</h3><h4>Metalica</h3></a></li>
           <li><a href="img/The A Team.png" class="pop"><h3>A team</h3><h4>Ed Sheeran</h4></a></li>
@@ -55,14 +56,21 @@
       function openMenu(){
         document.getElementById("menu").classList.toggle("change")
       };
+      /*The function for making the search funtion uses various variables along with a for loop and if statments.
 
+      the input variable is created everytime a character is added to the search bar. The filter variable then takes that input and makes it upper case
+      to make it not case sensitive. The ul variable and li variable then get the list of songs to search for.
+
+      The for loop then loops over the function following it to each song in the list. It creates a variable of "a" which is the value of each link in the
+      library. It then converts it to text value, which is the name of the song and the artist into teh txtValue variable and the name of each class which
+      is how the genre of the song is determined. The if statment then checks each song to see if the filter is the same as the songs or class. If it is not
+      there then it will return a value of -1. If it is in there then it will show all the songs that contain the given filter value.*/
       function searchFilter() {
       var input, filter, ul, li, a, i, txtValue;
       input = document.getElementById("input");
       filter = input.value.toUpperCase();
       ul = document.getElementById("songLibrary");
       li = ul.getElementsByTagName("li");
-      let classfilter = ["ROCK","FOLK","METAl"];
       for (i = 0; i < li.length; i++) {
           a = li[i].getElementsByTagName("a")[0];
           txtValue = a.textContent || a.innerText;
